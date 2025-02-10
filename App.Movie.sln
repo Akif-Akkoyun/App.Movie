@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B790CFD6-8947-4F7C-B55A-D5072AF1B7CD}"
 EndProject
@@ -11,8 +11,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{59A12C15-BE60-4D26-ADF1-32A34C44E4BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Movie.Domain", "Core\App.Movie.Domain\App.Movie.Domain.csproj", "{CCFF53A8-F7BE-46C2-8E31-3275A1F29E1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Movie.Persistence", "Infrastructure\App.Movie.Persistence\App.Movie.Persistence.csproj", "{C4E118F4-34BC-46B6-AAE2-F49076163013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Movie.WebApi", "Presentation\App.Movie.WebApi\App.Movie.WebApi.csproj", "{4BD30728-644F-410B-A922-DF1B45403C43}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCFF53A8-F7BE-46C2-8E31-3275A1F29E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFF53A8-F7BE-46C2-8E31-3275A1F29E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFF53A8-F7BE-46C2-8E31-3275A1F29E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFF53A8-F7BE-46C2-8E31-3275A1F29E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E118F4-34BC-46B6-AAE2-F49076163013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E118F4-34BC-46B6-AAE2-F49076163013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E118F4-34BC-46B6-AAE2-F49076163013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E118F4-34BC-46B6-AAE2-F49076163013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD30728-644F-410B-A922-DF1B45403C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD30728-644F-410B-A922-DF1B45403C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD30728-644F-410B-A922-DF1B45403C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD30728-644F-410B-A922-DF1B45403C43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CCFF53A8-F7BE-46C2-8E31-3275A1F29E1E} = {B790CFD6-8947-4F7C-B55A-D5072AF1B7CD}
+		{C4E118F4-34BC-46B6-AAE2-F49076163013} = {35218C50-5FF7-4022-9A1C-D364FFFEB4E6}
+		{4BD30728-644F-410B-A922-DF1B45403C43} = {59A12C15-BE60-4D26-ADF1-32A34C44E4BC}
 	EndGlobalSection
 EndGlobal
