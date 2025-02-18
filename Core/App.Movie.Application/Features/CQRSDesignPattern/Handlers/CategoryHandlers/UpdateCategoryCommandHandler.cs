@@ -17,7 +17,7 @@ namespace App.Movie.Application.Features.CQRSDesignPattern.Handlers.CategoryHand
         {
             _dbContext = dbContext;
         }
-        public async void Handle(UpdateCategoryCommand command)
+        public async Task Handle(UpdateCategoryCommand command)
         {
             var category = await _dbContext.Set<CategoryEntity>().FindAsync(command.Id);
             if (category == null)

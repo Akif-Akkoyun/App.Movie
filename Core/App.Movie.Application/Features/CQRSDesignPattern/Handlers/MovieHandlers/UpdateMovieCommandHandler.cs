@@ -18,7 +18,7 @@ namespace App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandler
         {
             _dbContext = dbContext;
         }
-        public async void Handle(UpdateMovieCommand command)
+        public async Task Handle(UpdateMovieCommand command)
         {
             var movie = await _dbContext.Set<MovieEntity>().FindAsync(command.Id);
             if (movie is null)

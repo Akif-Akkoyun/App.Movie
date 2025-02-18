@@ -17,12 +17,12 @@ namespace App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandler
         {
             _dbContext = dbContext;
         }
-        public async void Handle(RemoveMovieCommand command)
+        public async Task Handle(RemoveMovieCommand command)
         {
             var movie = await _dbContext.Set<MovieEntity>().FindAsync(command.Id);
-            if (movie == null)
+            if (movie is null)
             {
-                throw new Exception("Movie not found");
+                throw new InvalidOperationException("Movie not found");
             }
             _dbContext.Set<MovieEntity>().Remove(movie);
             await _dbContext.SaveChangesAsync();
