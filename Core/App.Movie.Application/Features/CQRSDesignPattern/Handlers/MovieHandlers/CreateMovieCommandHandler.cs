@@ -17,7 +17,7 @@ namespace App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandler
         {
             _dbContext = dbContext;
         }
-        public async void Handle(CreateMovieCommand command)
+        public async Task Handle(CreateMovieCommand command)
         {
             _dbContext.Add(new MovieEntity
             {

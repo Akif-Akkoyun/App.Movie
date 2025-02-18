@@ -13,7 +13,7 @@ namespace App.Movie.Application.Features.CQRSDesignPattern.Handlers.CategoryHand
             _dbContext = dbContext;
         }
 
-        public async void Handle(CreateCategoryCommand command)
+        public async Task Handle(CreateCategoryCommand command)
         {
             _dbContext.Add(new CategoryEntity
             {
