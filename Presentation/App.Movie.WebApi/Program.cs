@@ -1,7 +1,9 @@
 using App.Movie.Persistence;
+using App.Movie.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddServices();
 
 builder.Services.AddControllers();
 
