@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Movie.Domain.Entities
+namespace App.Movie.Application.Features.MediatorDesignPattern.Results.CastResults
 {
-    public class CastEntity
+    public class GetCastByIdQueryResult
     {
         public int Id { get; set; }
         public string Title { get; set; } = default!;
