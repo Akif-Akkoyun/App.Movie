@@ -1,13 +1,12 @@
 using App.Movie.Persistence;
 using App.Movie.WebApi;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddServices();
+builder.Services.AddServicesRegistration();
 
 builder.Services.AddControllers();
-
-builder.Services.AddOpenApi();
 
 var connectionString = builder
     .Configuration
@@ -20,7 +19,11 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1");
+    });
 }
 
 app.UseHttpsRedirection();

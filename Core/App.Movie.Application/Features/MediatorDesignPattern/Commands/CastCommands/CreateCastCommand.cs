@@ -1,14 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Movie.Domain.Entities
+namespace App.Movie.Application.Features.MediatorDesignPattern.Commands.CastCommands
 {
-    public class CastEntity
+    public class CreateCastCommand : IRequest
     {
-        public int Id { get; set; }
         public string Title { get; set; } = default!;
         public string Name { get; set; } = default!;
         public string Surname { get; set; } = default!;

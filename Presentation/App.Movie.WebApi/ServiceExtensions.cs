@@ -1,11 +1,12 @@
 ﻿using App.Movie.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using Microsoft.OpenApi.Models;
 
 namespace App.Movie.WebApi
 {
     public static class ServiceExtensions
     {
-        public static void AddServices(this IServiceCollection services)
+        public static void AddServicesRegistration(this IServiceCollection services)
         {
             #region Category
             services.AddScoped<GetCategoryByIdQueryHandler>();
@@ -21,6 +22,12 @@ namespace App.Movie.WebApi
             services.AddScoped<UpdateMovieCommandHandler>();
             services.AddScoped<RemoveMovieCommandHandler>();
             #endregion
+            services.AddEndpointsApiExplorer();
+
+            services.AddSwaggerGen(x =>
+            {
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "My Api", Version = "v1" });
+            });
         }
     }
 }

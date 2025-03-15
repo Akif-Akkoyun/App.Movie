@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace App.Movie.Persistence
 {
-    public static class DataExtensions
+    public static class InfrastructureExtensions
     {
         public static void AddDataLayer(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<DbContext, MovieContext>(options =>
             {
                 options.UseSqlServer(connectionString);
-            });
+            }); 
         }
     }
 }
