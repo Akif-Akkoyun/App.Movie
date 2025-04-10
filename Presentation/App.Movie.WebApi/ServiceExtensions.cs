@@ -1,6 +1,7 @@
 ﻿using App.Movie.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace App.Movie.WebApi
 {
@@ -22,6 +23,12 @@ namespace App.Movie.WebApi
             services.AddScoped<UpdateMovieCommandHandler>();
             services.AddScoped<RemoveMovieCommandHandler>();
             #endregion
+
+            services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            });
+
             services.AddEndpointsApiExplorer();
 
             services.AddSwaggerGen(x =>
