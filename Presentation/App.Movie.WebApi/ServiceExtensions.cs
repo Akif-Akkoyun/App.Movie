@@ -1,5 +1,6 @@
 ﻿using App.Movie.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using App.Movie.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -26,7 +27,7 @@ namespace App.Movie.WebApi
 
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                cfg.RegisterServicesFromAssembly(typeof(GetTagByIdQueryHandler).Assembly);
             });
 
             services.AddEndpointsApiExplorer();

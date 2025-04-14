@@ -9,6 +9,6 @@ namespace App.Movie.Application.Features.MediatorDesignPattern.Results.TagResult
     public class GetTagQueryResult
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
     }
 }
