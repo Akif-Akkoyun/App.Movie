@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="Partials/_PageHead"/>
+</head>
+<body>
+    <partial name="Partials/_PagePreLoading" />
+    <partial name="Partials/_PageLoginForm" />
+    <partial name="Partials/_PageSingUpForm" />
+    <partial name="Partials/_PageNavbar" />
+    @RenderBody()
+    <partial name="Partials/_PageScript" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -21,7 +21,7 @@ namespace App.Movie.Application.Features.MediatorDesignPattern.Handlers.TagHandl
 
         public async Task Handle(CreateTagCommand request, CancellationToken cancellationToken)
         {
-            _dbContext.Add(new TagEntity
+            await _dbContext.AddAsync(new TagEntity
             {
                 Title = request.Title
             });

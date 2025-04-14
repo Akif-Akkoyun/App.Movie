@@ -21,7 +21,7 @@ namespace App.Movie.Application.Features.MediatorDesignPattern.Handlers.CastHand
 
         public async Task Handle(CreateCastCommand request, CancellationToken cancellationToken)
         {
-            _dbContext.Add(new CastEntity
+            await _dbContext.AddAsync(new CastEntity
             {
                 Title = request.Title,
                 Name = request.Name,
