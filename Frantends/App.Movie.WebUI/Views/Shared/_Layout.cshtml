@@ -5,10 +5,12 @@
 </head>
 <body>
     <partial name="Partials/_PagePreLoading" />
-    <partial name="Partials/_PageLoginForm" />
-    <partial name="Partials/_PageSingUpForm" />
+    <partial name="Partials/_PopupLoginForm" />
+    <partial name="Partials/_PopupSingUpForm" />
     <partial name="Partials/_PageNavbar" />
+    <partial name="Partials/_PageHero" />
     @RenderBody()
+    <partial name="Partials/_PageFooter" />
     <partial name="Partials/_PageScript" />
     @await RenderSectionAsync("Scripts", required: false)
 </body>
