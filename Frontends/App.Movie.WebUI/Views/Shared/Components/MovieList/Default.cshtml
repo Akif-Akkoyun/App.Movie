@@ -1,0 +1,17 @@
+﻿@using App.Movie.Dto.Dtos.MovieDtos
+@model List<ResultMovieDto>
+
+@foreach (var item in Model)
+{
+	<div class="movie-item-style-2">
+		<img src="@item.CoverImageUrl" alt="">
+		<div class="mv-item-infor">
+			<h6><a href="moviesingle.html">@item.Title <span>(@item.CreatedYear)</span></a></h6>
+			<p class="rate"><i class="ion-android-star"></i><span>@item.Rating</span> /10</p>
+			<p class="describe">@item.Description</p>
+			<p class="run-time"> Run Time: @item.Duration Dk’    .     <span>MMPA: PG-13 </span>    .     <span>Release: @item.ReleaseDate</span></p>
+			<p>Director: <a href="#">Joss Whedon</a></p>
+			<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p>
+		</div>
+	</div>
+}

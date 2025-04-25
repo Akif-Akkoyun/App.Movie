@@ -1,8 +1,6 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "MovieList";
 }
-
 
 <div class="page-single movie_list">
 	<div class="container">
@@ -23,7 +21,7 @@
 					<a href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
 				</div>
 
-				@await Component.InvokeAsync("MovieList") 
+				<vc:movie-list />
 
 				<div class="topbar-filter">
 					<label>Movies per page:</label>
