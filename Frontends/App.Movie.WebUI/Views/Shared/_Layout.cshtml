@@ -3,12 +3,15 @@
 <head>
     <partial name="Partials/_PageHead"/>
 </head>
-<body>
+<body>    
     <partial name="Partials/_PagePreLoading" />
     <partial name="Partials/_PopupLoginForm" />
     <partial name="Partials/_PopupSingUpForm" />
     <partial name="Partials/_PageNavbar" />
-    <partial name="Partials/_PageHero" />
+    @if (ViewBag.PageHero == null || ViewBag.PageHero == false)
+    {
+        <partial name="Partials/_PageHero" />
+    }
     @RenderBody()
     <partial name="Partials/_PageFooter" />
     <partial name="Partials/_PageScript" />

@@ -21,5 +21,11 @@ namespace App.Movie.WebUI.Controllers
             ViewBag.v3 = "Tüm Filmler";
             return View();
         }
+        public async Task<IActionResult> MovieDetail(int id)
+        {
+            ViewBag.PageHero = true;
+            id = 0;
+            return View();
+        }
     }
 }
