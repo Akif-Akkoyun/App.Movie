@@ -1,6 +1,10 @@
 ﻿using App.Movie.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using App.Movie.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using App.Movie.Application.Features.CQRSDesignPattern.Handlers.UserRegisterHandlers;
 using App.Movie.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
+using App.Movie.Persistence.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 namespace App.Movie.WebApi
@@ -23,6 +27,10 @@ namespace App.Movie.WebApi
             services.AddScoped<UpdateMovieCommandHandler>();
             services.AddScoped<RemoveMovieCommandHandler>();
             #endregion
+
+            services.AddScoped<CreateUserRegisterCommandHandler>();
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<DbContext>();
+
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssembly(typeof(GetTagByIdQueryHandler).Assembly);
