@@ -1,14 +1,11 @@
 ﻿using App.Movie.Domain.Entities;
+using App.Movie.Persistence.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Movie.Persistence.Context
 {
-    internal class MovieContext : DbContext
+    internal class MovieContext : IdentityDbContext<AppUser>
     {
         public MovieContext(DbContextOptions<MovieContext> options) : base(options)
         {
